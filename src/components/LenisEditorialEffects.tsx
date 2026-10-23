@@ -54,7 +54,7 @@ export function EditorialPreloader() {
               transform: `translateY(${Math.max(0, 24 - (count / 100) * 24)}px)`,
             }}
           >
-            Mattéo
+            Matteo
           </span>
           <span
             className="font-sans font-bold uppercase text-[clamp(3.2rem,9vw,8.5rem)] leading-none tracking-[-0.06em] transition-all duration-500"

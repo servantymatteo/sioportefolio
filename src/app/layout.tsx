@@ -3,7 +3,7 @@ import "./globals.css";
 import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
 
 export const metadata: Metadata = {
-  title: "Mattéo Servanty | Portfolio BTS SIO SISR — Infrastructures & Cybersécurité",
+  title: "Matteo Servanty | Portfolio BTS SIO SISR — Infrastructures & Cybersécurité",
   description:
     "Portfolio IT BTS SIO Option SISR (Solutions d'Infrastructure, Systèmes et Réseaux) : Accueil, BTS SIO, À Propos, Entreprise, Certifications, TCS (E4), Projets d'Infrastructures & Procédures, et Veilles technologiques.",
 };

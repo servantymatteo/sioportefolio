@@ -231,7 +231,7 @@ export function TiltCertificationsGrid() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto relative z-10">
       {CERTIFICATIONS_DATA.map((cert, index) => {
         const isHovered = hoveredId === cert.id;
         return (
@@ -259,7 +259,9 @@ export function TiltCertificationsGrid() {
                     : "bg-amber-50 text-amber-700 border border-amber-200"
                 }`}
               >
-                {cert.status} • {cert.date}
+                {cert.status === cert.date
+                  ? cert.status
+                  : `${cert.status} • ${cert.date}`}
               </span>
             </div>
 

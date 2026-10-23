@@ -187,18 +187,18 @@ export function PortfolioApp() {
                   </div>
                   <div className="p-3.5 rounded-2xl bg-white/90 backdrop-blur-sm border border-slate-200/80 shadow-2xs">
                     <div className="text-[10px] font-mono text-slate-400">
-                      BLOCS E4
+                      ÉCOLE
                     </div>
-                    <div className="text-xl font-black text-slate-900 font-mono">
-                      6 / 6
+                    <div className="text-lg font-black text-slate-900 font-mono truncate">
+                      M2S Vitrolles
                     </div>
                   </div>
                   <div className="p-3.5 rounded-2xl bg-white/90 backdrop-blur-sm border border-slate-200/80 shadow-2xs">
                     <div className="text-[10px] font-mono text-slate-400">
-                      STANDARDS
+                      ALTERNANCE
                     </div>
-                    <div className="text-xl font-black text-emerald-600 font-mono">
-                      ANSSI
+                    <div className="text-lg font-black text-emerald-600 font-mono truncate">
+                      Mairie 13240
                     </div>
                   </div>
                 </div>
@@ -297,7 +297,7 @@ export function PortfolioApp() {
                       TRACEROUTE // PARCOURS
                     </span>
                     <span className="font-mono text-xs text-slate-400">
-                      3 HOPS ACTIFS
+                      {ABOUT_DATA.timeline.length} HOPS ACTIFS
                     </span>
                   </div>
 
@@ -491,10 +491,10 @@ export function PortfolioApp() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
               <BlueprintNodeHeader
                 nodeId="NODE-04"
-                vlanTag="CERTIFICATIONS // ANSSI • CISCO • CNIL • PIX"
+                vlanTag="CERTIFICATIONS // TRYHACKME PRE SECURITY • CISCO CCNA 1"
                 title="Mes Certifications &"
                 highlight="Attestations IT"
-                subtitle="Le câble réseau distribue les impulsions vers mes certifications officielles validées en cybersécurité, réseaux et conformité."
+                subtitle="Validation de mes compétences en réseaux et cybersécurité : TryHackMe Pre Security (Obtenue) et Cisco CCNA 1 (En cours)."
               />
 
               <TiltCertificationsGrid />
@@ -544,9 +544,9 @@ export function PortfolioApp() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
               <BlueprintNodeHeader
                 nodeId="NODE-07"
-                vlanTag="VEILLES // ZERO TRUST & HYPERVISEURS"
-                title="Ma Veille Technologique &"
-                highlight="Cybersécurité SISR"
+                vlanTag="VEILLES // SOUVERAINETÉ LINUX & SORTIE DE MICROSOFT"
+                title="Ma Veille Technologique :"
+                highlight="Alternatives Linux à Microsoft (Samba AD)"
                 subtitle={VEILLES_DATA.problematique}
               />
 
@@ -581,9 +581,9 @@ export function PortfolioApp() {
                 <div className="flex flex-wrap gap-2">
                   {[
                     "Toutes",
-                    "Zero Trust & SASE",
-                    "Virtualisation & Cloud",
-                    "Cybersécurité & ANSSI",
+                    "Souveraineté & État",
+                    "Active Directory sous Linux",
+                    "Alternative Open Source",
                   ].map((cat) => (
                     <button
                       key={cat}

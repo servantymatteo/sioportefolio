@@ -69,7 +69,7 @@ export function BlueprintPreloader() {
               opacity: Math.min(1, count / 40),
             }}
           >
-            Mattéo{" "}
+            Matteo{" "}
             <span className="font-serif italic font-normal text-violet-400">
               Servanty
             </span>

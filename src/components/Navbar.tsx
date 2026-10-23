@@ -98,7 +98,7 @@ export function Navbar({ activeProjectTab, setActiveProjectTab }: NavbarProps) {
               MS
             </span>
             <span className="text-xs font-bold text-slate-900 tracking-tight">
-              Mattéo Servanty
+              Matteo Servanty
             </span>
             <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-violet-100 text-violet-700 font-semibold">
               BTS SIO SISR

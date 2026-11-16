@@ -215,10 +215,10 @@ export function TcsPdfViewerSection() {
                   {(["school", "company1", "company2"] as const).map((cat) => {
                     const catTitle =
                       cat === "school"
-                        ? "En centre de formation (Ateliers Professionnels SISR)"
+                        ? "En centre de formation — M2S Formation Vitrolles (Ateliers Professionnels SISR)"
                         : cat === "company1"
-                        ? "En milieu professionnel — 1re année"
-                        : "En milieu professionnel — 2e année";
+                        ? "En alternance — Mairie de Septèmes-les-Vallons : support & parc"
+                        : "En alternance — Mairie de Septèmes-les-Vallons : réseaux, serveurs & AD";
 
                     const rows = TCS_REALISATIONS.filter(
                       (r) =>

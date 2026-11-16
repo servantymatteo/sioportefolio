@@ -161,9 +161,6 @@ export function BlueprintPortal({
           }}
         />
 
-        {/* Glowing Center Vertical Fiber Line */}
-        <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[2px] bg-gradient-to-b from-violet-600/0 via-violet-500 to-violet-600/0" />
-
         {/* VARIANT 1: SPLIT-GATE (Left & Right Blueprint Gates slide open) */}
         {variant === "split-gate" ? (
           <>

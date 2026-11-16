@@ -16,9 +16,6 @@ export function LivingNetworkSpine() {
       className="pointer-events-none fixed inset-y-0 left-6 lg:left-1/2 lg:-translate-x-1/2 z-0 w-12 flex justify-center overflow-hidden opacity-75"
       aria-hidden="true"
     >
-      {/* Background passive fiber */}
-      <div className="w-[2px] h-full bg-gradient-to-b from-violet-200/40 via-violet-300/50 to-violet-200/40" />
-
       {/* Active glowing fiber driven by Lenis scrollProgress */}
       <div
         className="absolute top-0 w-[3px] bg-gradient-to-b from-violet-600 via-purple-500 to-indigo-600 cable-glow origin-top transition-transform duration-75"

@@ -26,7 +26,6 @@ import { Navbar } from "./Navbar";
 import { ProjectModal } from "./ProjectModal";
 import { useLenisScroll } from "./SmoothScrollProvider";
 import {
-  LivingNetworkSpine,
   BlueprintNodeHeader,
   HeroMonogramOrbit,
   TiltCertificationsGrid,
@@ -223,9 +222,6 @@ export function PortfolioApp() {
             NOTE: No overflow-clip here so inner position:sticky works natively!
         =================================================================== */}
         <div className="relative z-10 rounded-t-[2.5rem] sm:rounded-t-[3.5rem] bg-[#f8f9fc] bg-blueprint shadow-[0_-30px_80px_rgba(15,23,42,0.35)] border-t border-violet-300/60">
-          {/* Central Living Fiber Spine inside the sheet */}
-          <LivingNetworkSpine />
-
           {/* PORTAL 1 : ZOOM-THROUGH INTO BTS SIO */}
           <BlueprintPortal
             nodeCode="NODE-01"
@@ -571,6 +567,38 @@ export function PortfolioApp() {
                     </p>
                   </div>
                 ))}
+              </div>
+
+              {/* Comparatif Solutions */}
+              <div className="rounded-3xl bg-white border border-slate-200/90 shadow-xs overflow-hidden">
+                <div className="px-6 py-4 border-b border-slate-200/90 text-sm font-bold text-slate-900">
+                  {VEILLES_DATA.comparison.title}
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left text-sm">
+                    <thead className="bg-slate-50 text-xs font-mono uppercase tracking-wider text-slate-500">
+                      <tr>
+                        <th className="px-6 py-3 font-semibold">Solution</th>
+                        <th className="px-6 py-3 font-semibold">Le mieux</th>
+                        <th className="px-6 py-3 font-semibold">Le moins bon</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-200/90">
+                      {VEILLES_DATA.comparison.rows.map((row) => (
+                        <tr key={row.solution}>
+                          <td className="px-6 py-3 font-bold text-violet-700 whitespace-nowrap">
+                            {row.solution}
+                          </td>
+                          <td className="px-6 py-3 text-slate-700">{row.best}</td>
+                          <td className="px-6 py-3 text-slate-500">{row.worst}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="px-6 py-4 bg-violet-50/70 border-t border-violet-200/70 text-sm font-semibold text-violet-800">
+                  {VEILLES_DATA.comparison.summary}
+                </div>
               </div>
 
               {/* Category Filter */}

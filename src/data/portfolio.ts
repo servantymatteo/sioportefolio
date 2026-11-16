@@ -739,58 +739,85 @@ export const VEILLES_DATA = {
       sources: "Mise en place de contrôleurs de domaine sous Linux, tests RSAT/GPO et interopérabilité postes Windows/Linux",
     },
   ],
+  comparison: {
+    title: "Comparatif des solutions d'identité Linux",
+    rows: [
+      {
+        solution: "Samba 4 AD",
+        best: "Remplacer un Windows Server AD (jonction des postes Windows, GPO, Kerberos)",
+        worst: "GPO moins complètes que Windows, pas d'AD CS natif",
+      },
+      {
+        solution: "FreeIPA",
+        best: "Parc Linux (LDAP, Kerberos, DNS, certificats intégrés)",
+        worst: "Postes Windows : pas de jonction directe, relation d'approbation requise",
+      },
+      {
+        solution: "Univention UCS",
+        best: "Administration simple avec interface web",
+        worst: "Dépend de Samba 4 en dessous, pas une vraie alternative technique",
+      },
+      {
+        solution: "Kanidm",
+        best: "Identité moderne et SSO (OIDC, LDAP), souveraineté",
+        worst: "Pas de contrôleur de domaine Windows : ni GPO, ni jonction de postes",
+      },
+    ],
+    summary:
+      "Samba pour remplacer l'AD Windows, FreeIPA pour un parc Linux, Kanidm pour l'authentification moderne.",
+  },
   articles: [
     {
       id: "veille-1",
-      title: "Directives de l'État et des collectivités : réduire la dépendance à Microsoft au profit du Logiciel Libre et de Linux",
-      source: "DINUM / Acteurs Publics & LeMagIT",
-      date: "2025 — 2026",
+      title: "La DINUM migre ses postes internes vers Linux : environ 250 postes d'ici fin 2026",
+      source: "Acteurs Publics (article du 20 avril 2026)",
+      date: "20 avril 2026",
       category: "Souveraineté & État",
       impactLevel: "Critique",
       summary:
-        "Face aux enjeux de souveraineté numérique (extraterritorialité du droit américain / Cloud Act) et à l'explosion des coûts de licences Microsoft, le gouvernement français et la DINUM accélèrent le déploiement d'alternatives souveraines basées sur Linux dans les ministères, collectivités territoriales et établissements publics.",
+        "La DINUM migre ses postes internes vers Linux, avec une échéance fixée à la fin de l'année 2026 et un poste de travail basé sur NixOS. La généralisation à toute l'administration n'est encore qu'au stade de la réflexion.",
       takeawaySISR:
-        "Pour un technicien/administrateur SISR en collectivité (comme en mairie), maîtriser l'administration Linux (Debian) et les alternatives libres à Microsoft devient un enjeu stratégique majeur.",
-      url: "https://www.numerique.gouv.fr/",
+        "Pour un technicien SISR, l'administration Linux et les alternatives libres deviennent un sujet concret, même si la généralisation reste à l'étude.",
+      url: "https://acteurspublics.fr/articles/400-postes-concernes-dici-lete-la-dsi-de-letat-precise-les-contours-de-sa-migration-vers-linux/",
     },
     {
       id: "veille-2",
-      title: "Samba 4 Active Directory sous Linux (Debian) : remplacer Windows Server AD DS sans perdre les GPO ni Kerberos",
-      source: "Tranquil IT / Documentation SambaWiki",
-      date: "2025 — 2026",
+      title: "Samba 4.25 : contrôleur de domaine Active Directory libre sous Linux",
+      source: "Samba.org (annonces de versions)",
+      date: "24 septembre 2026 (4.25.0) — 23 octobre 2026 (4.25.1)",
       category: "Active Directory sous Linux",
       impactLevel: "Critique",
       summary:
-        "Samba 4 permet de déployer un contrôleur de domaine Active Directory complet directement sur un serveur Debian Linux. Il prend en charge nativement l'authentification Kerberos, l'annuaire LDAP, le DNS dynamique, la réplication SYSVOL et l'administration via les consoles RSAT et les GPO pour les postes Windows.",
+        "Samba 4 permet de faire tourner un contrôleur de domaine Active Directory sur Debian : Kerberos, LDAP, DNS, réplication SYSVOL et administration depuis les outils RSAT. La série 4.25 est sortie en septembre 2026, suivie d'une première version corrective en octobre.",
       takeawaySISR:
-        "On peut aujourd'hui supprimer les coûts de licences Windows Server et CAL tout en conservant 100% de la gestion centralisée des postes clients Windows 10/11 et des stratégies de groupe (GPO).",
-      url: "https://dev.tranquil.it/samba/",
+        "Samba permet de remplacer un AD Windows, mais avec des GPO moins complètes que sous Windows Server : c'est la limite à présenter à l'oral.",
+      url: "https://www.samba.org/samba/latest_news.html",
     },
     {
       id: "veille-3",
-      title: "FreeIPA & Red Hat Identity Management : l'annuaire et l'authentification centralisée pensée pour les parcs Linux",
-      source: "Red Hat / Projet FreeIPA",
-      date: "2025 — 2026",
+      title: "FreeIPA 4.13.4 : correctif critique sur l'authentification LDAP",
+      source: "Projet FreeIPA (notes de version 4.13.4)",
+      date: "9 juillet 2026",
       category: "Active Directory sous Linux",
       impactLevel: "Majeur",
       summary:
-        "Lorsque les organisations migrent également leurs serveurs et postes de travail vers Linux (ex. GendBuntu dans la Gendarmerie Nationale), FreeIPA offre une alternative native combinant LDAP (389 Directory Server), Kerberos MIT, DNS, autorité de certification (Dogtag PKI) et approbations croisées avec Active Directory.",
+        "FreeIPA combine LDAP (389 Directory Server), Kerberos, DNS, une autorité de certification (Dogtag) et des approbations avec Active Directory. La version 4.13.4 corrige deux CVE : un bind LDAP anonyme pouvait obtenir des identifiants administrateur (CVE-2026-76578), et un principal authentifié pouvait déclencher un eval() avant le contrôle d'autorisation (CVE-2026-79678).",
       takeawaySISR:
-        "En environnement hybride (transition progressive de Windows vers Linux), la mise en place d'une relation d'approbation (Trust) entre AD et FreeIPA/Samba permet une migration sans coupure pour les utilisateurs.",
-      url: "https://www.freeipa.org/",
+        "Un annuaire Linux doit être mis à jour rapidement, et limiter les binds anonymes fait partie du durcissement de base à appliquer en SISR.",
+      url: "https://www.freeipa.org/_sources/release-notes/4-13-4.rst",
     },
     {
       id: "veille-4",
-      title: "Du couple Hyper-V / VMware vers Proxmox VE (KVM/LXC sous Debian) : le socle de virtualisation souverain",
-      source: "Proxmox Server Solutions / SILL (Socle Interministériel)",
-      date: "2025 — 2026",
+      title: "Proxmox VE 9.2 : répartition dynamique de charge et noyau Linux 7.0",
+      source: "Proxmox Server Solutions (communiqué officiel)",
+      date: "21 mai 2026",
       category: "Alternative Open Source",
       impactLevel: "Majeur",
       summary:
-        "La sortie de l'écosystème Microsoft passe également par le remplacement d'Hyper-V (et VMware) par Proxmox VE, basé sur Debian Linux. Il intègre nativement KVM pour les machines virtuelles, LXC pour les conteneurs légers, le pare-feu distribué et la sauvegarde dédupliquée via Proxmox Backup Server.",
+        "Proxmox VE 9.2 ajoute un Dynamic Load Balancer qui tient compte de la charge réelle des nœuds et peut migrer les VM et conteneurs HA, avec une base Debian 13.5, noyau 7.0 et QEMU 11.0. La version étend aussi le SDN (WireGuard, BGP).",
       takeawaySISR:
-        "Le duo Debian + Proxmox VE + Samba 4 AD constitue aujourd'hui la pile d'infrastructure 100% Open Source de référence enseignée et déployée en BTS SIO SISR.",
-      url: "https://www.proxmox.com/",
+        "Proxmox VE reste le socle de virtualisation utilisé en SISR : suivre ses versions permet de planifier les mises à jour d'un cluster.",
+      url: "https://www.proxmox.com/en/about/press-releases/proxmox-virtual-environment-9-2",
     },
   ] as VeilleArticle[],
 };

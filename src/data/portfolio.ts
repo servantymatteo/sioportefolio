@@ -330,13 +330,13 @@ export const TCS_COMPETENCIES: Competency[] = [
 
 export const TCS_REALISATIONS: TCSRealisation[] = [
   {
-    id: "real-1",
+    id: "real-3",
     category: "school",
     period: "M2S Formation Vitrolles",
-    title: "Procédure d'Isolation Multi-Promo sous Proxmox VE & Architecture WAN 100.X",
+    title: "Segmentation réseau et configuration des VLANs 802.1Q sur Switch administrable Planet",
     context: "Atelier Professionnel SISR — M2S Formation",
-    competencies: ["B1.1", "B1.2", "B1.4", "B1.5"],
-    deliverable: "Procédure PDF Google Drive & Topologie Proxmox",
+    competencies: ["B1.1", "B1.2", "B1.5"],
+    deliverable: "Tutoriel Switch Planet : Configuration VLAN (PDF)",
   },
   {
     id: "real-2",
@@ -348,13 +348,13 @@ export const TCS_REALISATIONS: TCSRealisation[] = [
     deliverable: "Tutoriel pfSense PDF & Configuration Firewall",
   },
   {
-    id: "real-3",
+    id: "real-1",
     category: "school",
     period: "M2S Formation Vitrolles",
-    title: "Segmentation réseau et configuration des VLANs 802.1Q sur Switch administrable Planet",
+    title: "Procédure d'Isolation Multi-Promo sous Proxmox VE & Architecture WAN 100.X",
     context: "Atelier Professionnel SISR — M2S Formation",
-    competencies: ["B1.1", "B1.2", "B1.5"],
-    deliverable: "Tutoriel Switch Planet : Configuration VLAN (PDF)",
+    competencies: ["B1.1", "B1.2", "B1.4", "B1.5"],
+    deliverable: "Procédure PDF Google Drive & Topologie Proxmox",
   },
   {
     id: "real-4",

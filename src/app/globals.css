@@ -3668,10 +3668,6 @@
       left: calc(var(--spacing) * 10);
     }
 
-    .md\:inline {
-      display: inline;
-    }
-
     .md\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -3716,10 +3712,6 @@
 
     .lg\:mx-auto {
       margin-inline: auto;
-    }
-
-    .lg\:inline {
-      display: inline;
     }
 
     .lg\:-translate-x-1\/2 {
@@ -3789,6 +3781,10 @@
   @media (min-width: 80rem) {
     .xl\:inline {
       display: inline;
+    }
+
+    .xl\:px-3\.5 {
+      padding-inline: calc(var(--spacing) * 3.5);
     }
   }
 }

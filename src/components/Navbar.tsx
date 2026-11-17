@@ -78,7 +78,7 @@ export function Navbar({ activeProjectTab, setActiveProjectTab }: NavbarProps) {
 
   const dockItemClass = (id: string) => {
     const isActive = activeSection === id;
-    return `group relative flex items-center gap-2 px-3.5 py-2.5 rounded-2xl text-xs font-semibold transition-all duration-300 cursor-pointer select-none ${
+    return `group relative flex items-center gap-2 px-2.5 xl:px-3.5 py-2.5 rounded-2xl text-xs font-semibold transition-all duration-300 cursor-pointer select-none ${
       isActive
         ? "bg-violet-600 text-white shadow-lg shadow-violet-600/35 -translate-y-1 scale-[1.04]"
         : "text-slate-700 hover:text-violet-700 hover:bg-violet-50/90 hover:-translate-y-0.5"
@@ -206,7 +206,7 @@ export function Navbar({ activeProjectTab, setActiveProjectTab }: NavbarProps) {
             title="Accueil"
           >
             <Home className="w-4 h-4 shrink-0" />
-            <span className="hidden md:inline whitespace-nowrap">Accueil</span>
+            <span className="hidden xl:inline whitespace-nowrap">Accueil</span>
           </button>
 
           <button
@@ -215,7 +215,7 @@ export function Navbar({ activeProjectTab, setActiveProjectTab }: NavbarProps) {
             title="BTS SIO"
           >
             <GraduationCap className="w-4 h-4 shrink-0" />
-            <span className="hidden md:inline whitespace-nowrap">BTS SIO</span>
+            <span className="hidden xl:inline whitespace-nowrap">BTS SIO</span>
           </button>
 
           <button
@@ -224,7 +224,7 @@ export function Navbar({ activeProjectTab, setActiveProjectTab }: NavbarProps) {
             title="À Propos de Moi"
           >
             <User className="w-4 h-4 shrink-0" />
-            <span className="hidden lg:inline whitespace-nowrap">
+            <span className="hidden xl:inline whitespace-nowrap">
               À Propos de Moi
             </span>
           </button>
@@ -235,7 +235,7 @@ export function Navbar({ activeProjectTab, setActiveProjectTab }: NavbarProps) {
             title="Entreprise"
           >
             <Building2 className="w-4 h-4 shrink-0" />
-            <span className="hidden lg:inline whitespace-nowrap">Entreprise</span>
+            <span className="hidden xl:inline whitespace-nowrap">Entreprise</span>
           </button>
 
           <button
@@ -255,7 +255,7 @@ export function Navbar({ activeProjectTab, setActiveProjectTab }: NavbarProps) {
             title="TCS (Tableau de synthèse)"
           >
             <FileSpreadsheet className="w-4 h-4 shrink-0" />
-            <span className="whitespace-nowrap">TCS</span>
+            <span className="hidden xl:inline whitespace-nowrap">TCS</span>
           </button>
 
           {/* Mes projets with upward pop-up trigger */}
@@ -274,7 +274,7 @@ export function Navbar({ activeProjectTab, setActiveProjectTab }: NavbarProps) {
               title="Mes projets (Infrastructures & Procédure)"
             >
               <FolderGit2 className="w-4 h-4 shrink-0" />
-              <span className="whitespace-nowrap">Mes projets</span>
+              <span className="hidden xl:inline whitespace-nowrap">Mes projets</span>
               <ChevronUp
                 className={`w-3.5 h-3.5 transition-transform duration-200 ${
                   projectsPopupOpen ? "rotate-180" : ""
@@ -289,7 +289,7 @@ export function Navbar({ activeProjectTab, setActiveProjectTab }: NavbarProps) {
             title="Veilles"
           >
             <Rss className="w-4 h-4 shrink-0" />
-            <span className="hidden md:inline whitespace-nowrap">Veilles</span>
+            <span className="hidden xl:inline whitespace-nowrap">Veilles</span>
           </button>
         </div>
       </nav>
